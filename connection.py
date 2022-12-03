@@ -11,8 +11,8 @@ from boto3.dynamodb.conditions import Key
 def DynamoDbConnection(filename):
     dynamodb = boto3.resource('dynamodb',
                               region_name='us-west-2',
-                              aws_access_key_id='AKIAZEWZ54WMTTNOFUWR',
-                              aws_secret_access_key='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')
+                              aws_access_key_id='xxx',
+                              aws_secret_access_key='xxx')
     table = dynamodb.Table('customers')
     with open(filename, 'r') as f:
         reader = csv.reader(f)
@@ -59,7 +59,7 @@ def DynamoDbConnection(filename):
 
 def MongoDbConnection(filename):
     client = pymongo.MongoClient(
-        "mongodb+srv://cyang72:gniyzcpsr1yNK87U@csp554project.ufifwyv.mongodb.net/?retryWrites=true&w=majority")
+        "mongodb+srv://username:userpassword@csp554project.ufifwyv.mongodb.net/?retryWrites=true&w=majority")
     db = client['mydatabase']
     mycol = db['customers']
     timedict = {}
@@ -105,8 +105,8 @@ def MySQLConnection(filename):
     mydb = mysql.connector.connect(
         host="localhost",
         user='root',
-        password='ccyyUSA2018',
-        database='mydatabase'
+        password='sss',
+        database='sss'
     )
     mycursor = mydb.cursor()
     timedict = {}
